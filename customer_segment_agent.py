@@ -8,6 +8,14 @@ from strands import Agent
 from bedrock_agentcore.runtime import BedrockAgentCoreApp
 from datetime import datetime
 from typing import Dict, Any, List, Optional
+import logging
+
+# Configure logging
+logging.basicConfig(
+    level=logging.INFO,
+    format='%(asctime)s - %(name)s - %(levelname)s - %(message)s'
+)
+logger = logging.getLogger(__name__)
 
 app = BedrockAgentCoreApp()
 
@@ -73,18 +81,48 @@ def calculate_loyalty_tier(membership_months: float, order_frequency: float, tot
         return "Bronz"
 
 
+def validate_customer_data(customer_data: Dict[str, Any]) -> tuple[bool, Optional[str]]:
+    """Validate input customer data."""
+    if not isinstance(customer_data, dict):
+        return False, "customerData must be a dictionary"
+    
+    customer = customer_data.get("customer", {})
+    if customer:
+        age = customer.get("age")
+        if age is not None and (age < 0 or age > 120):
+            return False, f"Invalid age: {age}"
+        
+        product_history = customer.get("productHistory", [])
+        for product in product_history:
+            if product.get("totalSpent", 0) < 0:
+                return False, f"Invalid totalSpent for product {product.get('productId')}"
+            if product.get("orderCount", 0) < 0:
+                return False, f"Invalid orderCount for product {product.get('productId')}"
+    
+    return True, None
+
+
 def analyze_customer_data(customer_data: Dict[str, Any]) -> Dict[str, Any]:
     """
     Analyze customer data and return segmentation insights.
     
     This function performs deterministic rule-based analysis without ML.
     """
+    logger.info(f"Starting analysis for customer: {customer_data.get('customerId', 'N/A')}")
+    
+    # Validate input
+    is_valid, error_msg = validate_customer_data(customer_data)
+    if not is_valid:
+        logger.error(f"Validation failed: {error_msg}")
+        raise ValueError(error_msg)
+    
     # Extract basic info
     customer_id = customer_data.get("customerId")
     city = customer_data.get("city", "")
     
     # Handle region mode (no customer ID)
     if not customer_id:
+        logger.info(f"Region mode analysis for city: {city}")
         region = customer_data.get("region", {})
         median_basket = region.get("medianBasket", 0)
         return {
@@ -118,6 +156,7 @@ def analyze_customer_data(customer_data: Dict[str, Any]) -> Dict[str, Any]:
     
     # Handle new customer mode (empty purchase history)
     if not product_history:
+        logger.info(f"New customer mode for: {customer_id}")
         age = customer.get("age", 30)
         membership_days = (datetime.now() - datetime.fromisoformat(customer.get("registeredAt", datetime.now().isoformat()))).days
         median_basket = region.get("medianBasket", 0)
@@ -150,12 +189,15 @@ def analyze_customer_data(customer_data: Dict[str, Any]) -> Dict[str, Any]:
         }
     
     # Regular mode - full analysis
+    logger.info(f"Regular mode analysis for: {customer_id} with {len(product_history)} products")
     age = customer.get("age", 30)
     
     # Calculate metrics
     total_spent = sum(p.get("totalSpent", 0) for p in product_history)
     total_orders = sum(p.get("orderCount", 0) for p in product_history)
     avg_basket = total_spent / total_orders if total_orders > 0 else 0
+    
+    logger.debug(f"Metrics - Total spent: {total_spent}, Orders: {total_orders}, Avg basket: {avg_basket}")
     
     # Calculate dates
     registered_at = datetime.fromisoformat(customer.get("registeredAt", datetime.now().isoformat()))
@@ -226,6 +268,8 @@ def analyze_customer_data(customer_data: Dict[str, Any]) -> Dict[str, Any]:
     value_segment = calculate_value_segment(avg_basket, region.get("medianBasket", 0))
     loyalty_tier = calculate_loyalty_tier(membership_months, order_frequency, total_orders)
     
+    logger.info(f"Segments - Age: {age_segment}, Churn: {churn_segment}, Value: {value_segment}, Loyalty: {loyalty_tier}")
+    
     return {
         "mode": "regular",
         "customerId": customer_id,
@@ -261,13 +305,17 @@ def invoke(payload: Dict[str, Any]) -> Dict[str, Any]:
     
     Accepts customer data and returns comprehensive segmentation insights.
     """
+    logger.info("=== Agent invocation started ===")
     try:
         # Extract prompt or customer data
         user_message = payload.get("prompt", "")
         customer_data = payload.get("customerData", {})
         
+        logger.debug(f"Payload keys: {list(payload.keys())}")
+        
         # If customer data is provided, perform analysis
         if customer_data:
+            logger.info("Customer data provided, starting analysis")
             analysis_result = analyze_customer_data(customer_data)
             
             # Create a summary message for the agent
@@ -285,36 +333,50 @@ def invoke(payload: Dict[str, Any]) -> Dict[str, Any]:
             
             # Use agent to provide natural language explanation
             try:
+                logger.info("Generating AI explanation")
                 agent_response = agent(f"Provide a brief explanation of this customer analysis:\n{summary}")
                 explanation = agent_response.message
+                logger.info("AI explanation generated successfully")
             except Exception as agent_error:
-                # Fallback to a simple explanation if agent fails
+                logger.warning(f"Agent explanation failed: {str(agent_error)}, using fallback")
                 explanation = f"Customer segmentation analysis completed. {analysis_result.get('message', '')}"
             
-            return {
+            result = {
                 "analysis": analysis_result,
                 "explanation": explanation,
                 "timestamp": datetime.now().isoformat()
             }
+            logger.info("=== Analysis completed successfully ===")
+            return result
         
         # Otherwise, use agent for general queries
         if not user_message:
             user_message = "Hello! I'm the Customer Segment Agent. Provide customer data for analysis."
         
+        logger.info(f"Processing general query: {user_message[:50]}...")
         try:
             result = agent(user_message)
+            logger.info("General query processed successfully")
             return {
                 "result": result.message,
                 "timestamp": datetime.now().isoformat()
             }
         except Exception as agent_error:
-            # Fallback response if agent fails
+            logger.warning(f"Agent query failed: {str(agent_error)}, using fallback")
             return {
                 "result": "I'm the Customer Segment Agent. I analyze customer data to provide segmentation insights including age segments, churn risk, value classification, loyalty tiers, and product preferences. Please provide customer data for analysis.",
                 "timestamp": datetime.now().isoformat()
             }
         
+    except ValueError as ve:
+        logger.error(f"Validation error: {str(ve)}")
+        return {
+            "error": str(ve),
+            "message": "Invalid input data",
+            "timestamp": datetime.now().isoformat()
+        }
     except Exception as e:
+        logger.error(f"Unexpected error: {str(e)}", exc_info=True)
         return {
             "error": str(e),
             "message": "Failed to process customer analysis",
