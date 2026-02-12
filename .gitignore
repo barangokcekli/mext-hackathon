@@ -87,3 +87,11 @@ next-env.d.ts
 # OS
 Thumbs.db
 .DS_Store
+
+# Test output files
+*_payload_*.json
+*_result_*.json
+orchestrator_payload_dynamodb.json
+orchestrator_dynamodb_flag_payload.json
+customer_payload_from_dynamodb.json
+product_payload_from_dynamodb.json
