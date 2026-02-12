@@ -1,62 +1,7 @@
 import { NextRequest, NextResponse } from "next/server";
 import type { Campaign } from "@/components/ui/CampaignCard";
 
-const mockCampaigns: Campaign[] = [
-  {
-    id: "1",
-    title: "Sezon Sonu İndirim E-posta Kampanyası",
-    description: "Mevcut müşterilere özel sezon sonu indirimi ile ürün satışlarını artırın. Kişiselleştirilmiş e-posta içerikleri ile yüksek dönüşüm oranı.",
-    type: "İndirim",
-    channel: "E-posta",
-    estimatedReach: "15.000+",
-    difficulty: "Kolay",
-  },
-  {
-    id: "2",
-    title: "Instagram Reels Ürün Tanıtımı",
-    description: "Kısa ve dikkat çekici Reels videoları ile ürününüzü geniş kitlelere tanıtın. Trend müzikler ve yaratıcı geçişlerle viral potansiyel.",
-    type: "Tanıtım",
-    channel: "Sosyal Medya",
-    estimatedReach: "50.000+",
-    difficulty: "Orta",
-  },
-  {
-    id: "3",
-    title: "Google Shopping Reklam Kampanyası",
-    description: "Ürün araması yapan potansiyel müşterilere doğrudan ulaşın. Yüksek satın alma niyetli trafik ile ROI odaklı kampanya.",
-    type: "Reklam",
-    channel: "Google Ads",
-    estimatedReach: "25.000+",
-    difficulty: "Orta",
-  },
-  {
-    id: "4",
-    title: "Sadakat Programı SMS Bildirimi",
-    description: "Sadık müşterilerinize özel fırsatları SMS ile anında iletin. Yüksek açılma oranı ile hızlı dönüşüm sağlayın.",
-    type: "Sadakat",
-    channel: "SMS",
-    estimatedReach: "8.000+",
-    difficulty: "Kolay",
-  },
-  {
-    id: "5",
-    title: "Mikro Influencer İş Birliği",
-    description: "Niş alanınızdaki mikro influencer'lar ile organik ve güvenilir ürün tanıtımı yapın. Yüksek etkileşim oranı garantili.",
-    type: "İş Birliği",
-    channel: "Influencer",
-    estimatedReach: "30.000+",
-    difficulty: "Zor",
-  },
-  {
-    id: "6",
-    title: "Terk Edilen Sepet Kurtarma",
-    description: "Sepetinde ürün bırakıp ayrılan ziyaretçilere otomatik push bildirim gönderin. Kaybedilen satışları geri kazanın.",
-    type: "Retargeting",
-    channel: "Push Bildirim",
-    estimatedReach: "5.000+",
-    difficulty: "Kolay",
-  },
-];
+const ORCHESTRATOR_URL = process.env.ORCHESTRATOR_URL || "http://localhost:8000";
 
 export async function POST(request: NextRequest) {
   const { url } = await request.json();
@@ -65,8 +10,63 @@ export async function POST(request: NextRequest) {
     return NextResponse.json({ error: "URL gerekli" }, { status: 400 });
   }
 
-  // Simulate AI processing time
-  await new Promise((resolve) => setTimeout(resolve, 7000));
+  try {
+    // Call orchestrator API
+    const response = await fetch(`${ORCHESTRATOR_URL}/api/orchestrate`, {
+      method: "POST",
+      headers: { "Content-Type": "application/json" },
+      body: JSON.stringify({
+        prompt: `${url} için kampanya önerileri oluştur`,
+        customerId: "C-2001", // Default customer
+        maxProducts: 30,
+        useLLM: false
+      }),
+    });
 
-  return NextResponse.json({ campaigns: mockCampaigns, analyzedUrl: url });
+    if (!response.ok) {
+      throw new Error("Orchestrator API error");
+    }
+
+    const data = await response.json();
+    
+    // Transform orchestrator response to Campaign format
+    const campaigns: Campaign[] = data.campaigns.map((camp: any, index: number) => ({
+      id: camp.campaignId || `camp-${index + 1}`,
+      title: camp.title || "Kampanya",
+      description: camp.description || "",
+      type: "İndirim",
+      channel: "Multi-Channel",
+      estimatedReach: `${Math.round(camp.estimatedRevenue || 0)} TL`,
+      difficulty: camp.discountRate > 30 ? "Kolay" : "Orta",
+      products: camp.products || [],
+      discountRate: camp.discountRate,
+      targetSegment: camp.targetSegment,
+      validUntil: camp.validUntil
+    }));
+
+    return NextResponse.json({ 
+      campaigns, 
+      analyzedUrl: url,
+      orchestrationSummary: data.orchestrationSummary,
+      customerInsight: data.customerInsight,
+      productInsight: data.productInsight
+    });
+  } catch (error) {
+    console.error("Orchestrator error:", error);
+    
+    // Fallback to mock data if orchestrator fails
+    const mockCampaigns: Campaign[] = [
+      {
+        id: "1",
+        title: "⚠️ Orchestrator'a bağlanılamadı",
+        description: "Lütfen FastAPI server'ı başlatın:\n\ncd mext-hackathon && uvicorn api_server:app --host 0.0.0.0 --port 8000",
+        type: "Hata",
+        channel: "N/A",
+        estimatedReach: "0",
+        difficulty: "N/A",
+      },
+    ];
+
+    return NextResponse.json({ campaigns: mockCampaigns, analyzedUrl: url });
+  }
 }

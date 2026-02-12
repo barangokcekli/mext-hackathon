@@ -10,6 +10,14 @@ import type { Campaign } from "@/components/ui/CampaignCard";
 interface CampaignData {
   campaigns: Campaign[];
   analyzedUrl: string;
+  orchestrationSummary?: {
+    customerAnalyzed: boolean;
+    productAnalyzed: boolean;
+    campaignCount: number;
+    warnings?: string[];
+  };
+  customerInsight?: any;
+  productInsight?: any;
 }
 
 export default function CampaignsPage() {
@@ -42,12 +50,35 @@ export default function CampaignsPage() {
             <ArrowLeftIcon className="w-4 h-4" /> Yeni Analiz
           </button>
           <h1 className="text-3xl md:text-4xl font-bold text-white mb-2">
-            Kampanya Önerileri
+            📋 Kampanya Önerileri ({data.campaigns.length} adet)
           </h1>
           <p className="text-gray-400">
             <span className="text-primary-light">{data.analyzedUrl}</span> için{" "}
             {data.campaigns.length} kampanya önerisi oluşturuldu.
           </p>
+          
+          {/* Orchestration Summary */}
+          {data.orchestrationSummary && (
+            <div className="mt-4 p-4 bg-surface rounded-lg border border-gray-800">
+              <div className="flex items-center gap-4 text-sm">
+                <span className={data.orchestrationSummary.customerAnalyzed ? "text-green-400" : "text-gray-500"}>
+                  {data.orchestrationSummary.customerAnalyzed ? "✓" : "✗"} Müşteri Analizi
+                </span>
+                <span className={data.orchestrationSummary.productAnalyzed ? "text-green-400" : "text-gray-500"}>
+                  {data.orchestrationSummary.productAnalyzed ? "✓" : "✗"} Ürün Analizi
+                </span>
+              </div>
+              {data.orchestrationSummary.warnings && data.orchestrationSummary.warnings.length > 0 && (
+                <div className="mt-2 text-xs text-yellow-400">
+                  ⚠️ Uyarılar:
+                  {data.orchestrationSummary.warnings.map((warning, idx) => (
+                    <div key={idx} className="ml-4">• {warning}</div>
+                  ))}
+                </div>
+              )}
+            </div>
+          )}
+          
           <button
             onClick={() => {
               sessionStorage.removeItem("selectedCampaign");

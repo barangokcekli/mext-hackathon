@@ -32,7 +32,12 @@ export default function CampaignStudioPage() {
       const res = await fetch("/api/generate", {
         method: "POST",
         headers: { "Content-Type": "application/json" },
-        body: JSON.stringify({ prompt, files, campaignTitle }),
+        body: JSON.stringify({ 
+          prompt, 
+          files, 
+          campaignTitle,
+          customerId: "C-2001" // Default customer
+        }),
       });
       const data = await res.json();
       setResult(data.result);
