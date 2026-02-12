@@ -47,9 +47,9 @@ class ProductDynamoDBClient:
             Ürün listesi
         """
         try:
-            response = self.products_table.query(
-                IndexName="TenantIdIndex",
-                KeyConditionExpression=Key("tenantId").eq(tenant_id),
+            # TenantIdIndex yoksa scan kullan
+            response = self.products_table.scan(
+                FilterExpression=Attr('tenantId').eq(tenant_id),
                 Limit=limit
             )
             
@@ -58,7 +58,13 @@ class ProductDynamoDBClient:
             
         except Exception as e:
             logger.error(f"Error fetching products for tenant {tenant_id}: {e}")
-            return []
+            # Fallback: scan without filter
+            try:
+                response = self.products_table.scan(Limit=limit)
+                items = response.get("Items", [])
+                return [self._convert_decimals(item) for item in items]
+            except:
+                return []
 
     def get_product(self, product_id: str) -> Optional[Dict[str, Any]]:
         """
