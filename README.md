@@ -73,6 +73,34 @@ agentcore status
 aws logs tail /aws/bedrock-agentcore/runtimes/customer_segment_agent-1GD3a24jRt-DEFAULT --follow
 ```
 
+## 🔗 Integration with Other Agents
+
+This agent is designed to be called by other agents or orchestrators. See the [Integration Guide](docs/INTEGRATION_GUIDE.md) for detailed instructions.
+
+### Quick Integration Example
+
+```python
+import boto3
+import json
+
+client = boto3.client('bedrock-agent-runtime', region_name='us-west-2')
+
+response = client.invoke_agent(
+    agentId='customer_segment_agent-1GD3a24jRt',
+    agentAliasId='TSTALIASID',
+    sessionId='unique-session-id',
+    inputText=json.dumps({"customerData": {...}})
+)
+
+result = json.loads(response['completion'])
+print(f"Segment: {result['analysis']['ageSegment']}")
+```
+
+For complete examples, see:
+- [Python Integration Example](examples/integration_example.py)
+- [Node.js Integration Example](examples/integration_example.js)
+- [Full Integration Guide](docs/INTEGRATION_GUIDE.md)
+
 ## 💻 Usage
 
 ### Request Format
