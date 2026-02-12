@@ -42,6 +42,19 @@ logging.basicConfig(
 )
 logger = logging.getLogger(__name__)
 
+# DynamoDB client imports (optional, fallback to mock data if not available)
+try:
+    import sys
+    sys.path.insert(0, os.path.join(os.path.dirname(__file__), "customer-segment-agent"))
+    sys.path.insert(0, os.path.join(os.path.dirname(__file__), "product-agent"))
+    from dynamodb_client import get_dynamodb_client
+    from dynamodb_client import get_product_dynamodb_client
+    DYNAMODB_AVAILABLE = True
+    logger.info("DynamoDB clients loaded successfully")
+except ImportError as e:
+    DYNAMODB_AVAILABLE = False
+    logger.warning(f"DynamoDB clients not available, will use mock data: {e}")
+
 app = BedrockAgentCoreApp()
 
 # ---------------------------------------------------------------------------
@@ -456,9 +469,10 @@ def invoke(payload: Dict[str, Any]) -> Dict[str, Any]:
     Payload formatı:
     {
         "prompt": "Yaz kampanyası oluştur",
-        "customerData": { ... },
-        "productData": { ... },
-        "useLLM": true/false  (opsiyonel, default: true)
+        "customerData": { ... },  // veya "customerId": "C-1001" (DynamoDB'den çeker)
+        "productData": { ... },   // veya "tenantId": "farmasi" (DynamoDB'den çeker)
+        "useLLM": true/false,     // (opsiyonel, default: true)
+        "useDynamoDB": true/false // (opsiyonel, default: false)
     }
     """
     logger.info("=== Orchestrator Agent invocation started ===")
@@ -476,9 +490,43 @@ def invoke(payload: Dict[str, Any]) -> Dict[str, Any]:
                     pass
 
         prompt = payload.get("prompt", "Kişiselleştirilmiş kampanya önerileri oluştur")
+        use_llm = payload.get("useLLM", True)
+        use_dynamodb = payload.get("useDynamoDB", False)
+        
+        # DynamoDB'den veri çekme
         customer_data = payload.get("customerData")
         product_data = payload.get("productData")
-        use_llm = payload.get("useLLM", True)
+        
+        if use_dynamodb and DYNAMODB_AVAILABLE:
+            logger.info("DynamoDB mode enabled, fetching data from DynamoDB...")
+            
+            # Customer data
+            if not customer_data and "customerId" in payload:
+                customer_id = payload["customerId"]
+                logger.info(f"Fetching customer data for: {customer_id}")
+                try:
+                    db_client = get_dynamodb_client()
+                    customer_data = db_client.build_customer_payload(customer_id)
+                    if customer_data:
+                        logger.info(f"✓ Customer data loaded from DynamoDB")
+                    else:
+                        logger.warning(f"Customer {customer_id} not found in DynamoDB")
+                except Exception as e:
+                    logger.error(f"Error fetching customer from DynamoDB: {e}")
+            
+            # Product data
+            if not product_data and "tenantId" in payload:
+                tenant_id = payload["tenantId"]
+                logger.info(f"Fetching product data for tenant: {tenant_id}")
+                try:
+                    product_db_client = get_product_dynamodb_client()
+                    product_data = product_db_client.build_product_payload(tenant_id)
+                    logger.info(f"✓ Product data loaded from DynamoDB ({len(product_data.get('products', []))} products)")
+                except Exception as e:
+                    logger.error(f"Error fetching products from DynamoDB: {e}")
+        
+        elif use_dynamodb and not DYNAMODB_AVAILABLE:
+            logger.warning("DynamoDB requested but clients not available, falling back to payload data")
 
         result = orchestrate_campaign(
             prompt=prompt,
