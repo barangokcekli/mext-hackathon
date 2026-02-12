@@ -1,0 +1,372 @@
+[
+  {
+    "customerId": "C-1001",
+    "city": "Istanbul",
+    "region": "Marmara",
+    "age": 32,
+    "gender": "F",
+    "registeredAt": "2024-03-15",
+    "productHistory": [
+      {
+        "productId": "P-2001",
+        "category": "SKINCARE",
+        "totalQuantity": 8,
+        "totalSpent": 479.20,
+        "orderCount": 8,
+        "firstPurchase": "2025-01-15",
+        "lastPurchase": "2026-01-20",
+        "avgDaysBetween": 30
+      },
+      {
+        "productId": "P-2004",
+        "category": "SKINCARE",
+        "totalQuantity": 7,
+        "totalSpent": 454.30,
+        "orderCount": 5,
+        "firstPurchase": "2025-02-10",
+        "lastPurchase": "2026-02-01",
+        "avgDaysBetween": 45
+      },
+      {
+        "productId": "P-2002",
+        "category": "SKINCARE",
+        "totalQuantity": 1,
+        "totalSpent": 119.90,
+        "orderCount": 1,
+        "firstPurchase": "2025-11-25",
+        "lastPurchase": "2025-11-25",
+        "avgDaysBetween": null
+      },
+      {
+        "productId": "P-1002",
+        "category": "MAKEUP",
+        "totalQuantity": 1,
+        "totalSpent": 54.90,
+        "orderCount": 1,
+        "firstPurchase": "2025-10-15",
+        "lastPurchase": "2025-10-15",
+        "avgDaysBetween": null
+      },
+      {
+        "productId": "P-3001",
+        "category": "FRAGRANCE",
+        "totalQuantity": 1,
+        "totalSpent": 149.90,
+        "orderCount": 1,
+        "firstPurchase": "2025-07-10",
+        "lastPurchase": "2025-07-10",
+        "avgDaysBetween": null
+      },
+      {
+        "productId": "P-1003",
+        "category": "MAKEUP",
+        "totalQuantity": 2,
+        "totalSpent": 89.80,
+        "orderCount": 1,
+        "firstPurchase": "2025-04-25",
+        "lastPurchase": "2025-04-25",
+        "avgDaysBetween": null
+      }
+    ]
+  },
+  {
+    "customerId": "C-1002",
+    "city": "Ankara",
+    "region": "İç Anadolu",
+    "age": 28,
+    "gender": "F",
+    "registeredAt": "2025-06-20",
+    "productHistory": [
+      {
+        "productId": "P-1001",
+        "category": "MAKEUP",
+        "totalQuantity": 1,
+        "totalSpent": 89.90,
+        "orderCount": 1,
+        "firstPurchase": "2025-12-05",
+        "lastPurchase": "2025-12-05",
+        "avgDaysBetween": null
+      },
+      {
+        "productId": "P-1002",
+        "category": "MAKEUP",
+        "totalQuantity": 2,
+        "totalSpent": 109.80,
+        "orderCount": 2,
+        "firstPurchase": "2025-08-25",
+        "lastPurchase": "2025-11-10",
+        "avgDaysBetween": 77
+      },
+      {
+        "productId": "P-1003",
+        "category": "MAKEUP",
+        "totalQuantity": 2,
+        "totalSpent": 89.80,
+        "orderCount": 1,
+        "firstPurchase": "2025-10-20",
+        "lastPurchase": "2025-10-20",
+        "avgDaysBetween": null
+      },
+      {
+        "productId": "P-2004",
+        "category": "SKINCARE",
+        "totalQuantity": 1,
+        "totalSpent": 64.90,
+        "orderCount": 1,
+        "firstPurchase": "2025-09-15",
+        "lastPurchase": "2025-09-15",
+        "avgDaysBetween": null
+      }
+    ]
+  },
+  {
+    "customerId": "C-1003",
+    "city": "Izmir",
+    "region": "Ege",
+    "age": 45,
+    "gender": "F",
+    "registeredAt": "2023-11-10",
+    "productHistory": [
+      {
+        "productId": "P-2002",
+        "category": "SKINCARE",
+        "totalQuantity": 4,
+        "totalSpent": 479.60,
+        "orderCount": 4,
+        "firstPurchase": "2025-07-30",
+        "lastPurchase": "2026-01-30",
+        "avgDaysBetween": 61
+      },
+      {
+        "productId": "P-2004",
+        "category": "SKINCARE",
+        "totalQuantity": 4,
+        "totalSpent": 259.60,
+        "orderCount": 3,
+        "firstPurchase": "2025-09-10",
+        "lastPurchase": "2026-01-15",
+        "avgDaysBetween": 63
+      },
+      {
+        "productId": "P-6001",
+        "category": "WELLNESS",
+        "totalQuantity": 2,
+        "totalSpent": 359.80,
+        "orderCount": 2,
+        "firstPurchase": "2025-08-20",
+        "lastPurchase": "2025-12-20",
+        "avgDaysBetween": 122
+      },
+      {
+        "productId": "P-3001",
+        "category": "FRAGRANCE",
+        "totalQuantity": 1,
+        "totalSpent": 149.90,
+        "orderCount": 1,
+        "firstPurchase": "2025-10-25",
+        "lastPurchase": "2025-10-25",
+        "avgDaysBetween": null
+      }
+    ]
+  },
+  {
+    "customerId": "C-1004",
+    "city": "Antalya",
+    "region": "Akdeniz",
+    "age": 22,
+    "gender": "F",
+    "registeredAt": "2025-09-01",
+    "productHistory": [
+      {
+        "productId": "P-1001",
+        "category": "MAKEUP",
+        "totalQuantity": 1,
+        "totalSpent": 89.90,
+        "orderCount": 1,
+        "firstPurchase": "2025-11-20",
+        "lastPurchase": "2025-11-20",
+        "avgDaysBetween": null
+      },
+      {
+        "productId": "P-1002",
+        "category": "MAKEUP",
+        "totalQuantity": 1,
+        "totalSpent": 54.90,
+        "orderCount": 1,
+        "firstPurchase": "2025-10-15",
+        "lastPurchase": "2025-10-15",
+        "avgDaysBetween": null
+      }
+    ]
+  },
+  {
+    "customerId": "C-1005",
+    "city": "Trabzon",
+    "region": "Karadeniz",
+    "age": 38,
+    "gender": "F",
+    "registeredAt": "2024-08-20",
+    "productHistory": [
+      {
+        "productId": "P-2006",
+        "category": "SKINCARE",
+        "totalQuantity": 1,
+        "totalSpent": 79.90,
+        "orderCount": 1,
+        "firstPurchase": "2025-08-10",
+        "lastPurchase": "2025-08-10",
+        "avgDaysBetween": null
+      },
+      {
+        "productId": "P-2007",
+        "category": "SKINCARE",
+        "totalQuantity": 2,
+        "totalSpent": 49.80,
+        "orderCount": 1,
+        "firstPurchase": "2025-07-25",
+        "lastPurchase": "2025-07-25",
+        "avgDaysBetween": null
+      },
+      {
+        "productId": "P-4002",
+        "category": "PERSONALCARE",
+        "totalQuantity": 1,
+        "totalSpent": 34.90,
+        "orderCount": 1,
+        "firstPurchase": "2025-06-30",
+        "lastPurchase": "2025-06-30",
+        "avgDaysBetween": null
+      }
+    ]
+  },
+  {
+    "customerId": "C-1006",
+    "city": "Istanbul",
+    "region": "Marmara",
+    "age": 29,
+    "gender": "M",
+    "registeredAt": "2025-10-15",
+    "productHistory": [
+      {
+        "productId": "P-3002",
+        "category": "FRAGRANCE",
+        "totalQuantity": 1,
+        "totalSpent": 139.90,
+        "orderCount": 1,
+        "firstPurchase": "2026-01-05",
+        "lastPurchase": "2026-01-05",
+        "avgDaysBetween": null
+      },
+      {
+        "productId": "P-4001",
+        "category": "PERSONALCARE",
+        "totalQuantity": 2,
+        "totalSpent": 59.80,
+        "orderCount": 1,
+        "firstPurchase": "2025-12-20",
+        "lastPurchase": "2025-12-20",
+        "avgDaysBetween": null
+      },
+      {
+        "productId": "P-5001",
+        "category": "HAIRCARE",
+        "totalQuantity": 1,
+        "totalSpent": 49.90,
+        "orderCount": 1,
+        "firstPurchase": "2025-11-30",
+        "lastPurchase": "2025-11-30",
+        "avgDaysBetween": null
+      }
+    ]
+  },
+  {
+    "customerId": "C-1007",
+    "city": "Bursa",
+    "region": "Marmara",
+    "age": 52,
+    "gender": "F",
+    "registeredAt": "2023-05-10",
+    "productHistory": [
+      {
+        "productId": "P-2002",
+        "category": "SKINCARE",
+        "totalQuantity": 5,
+        "totalSpent": 599.50,
+        "orderCount": 4,
+        "firstPurchase": "2025-10-30",
+        "lastPurchase": "2026-02-05",
+        "avgDaysBetween": 32
+      },
+      {
+        "productId": "P-2006",
+        "category": "SKINCARE",
+        "totalQuantity": 4,
+        "totalSpent": 319.60,
+        "orderCount": 3,
+        "firstPurchase": "2025-10-10",
+        "lastPurchase": "2026-01-25",
+        "avgDaysBetween": 52
+      },
+      {
+        "productId": "P-6001",
+        "category": "WELLNESS",
+        "totalQuantity": 1,
+        "totalSpent": 179.90,
+        "orderCount": 1,
+        "firstPurchase": "2026-01-10",
+        "lastPurchase": "2026-01-10",
+        "avgDaysBetween": null
+      },
+      {
+        "productId": "P-3001",
+        "category": "FRAGRANCE",
+        "totalQuantity": 1,
+        "totalSpent": 149.90,
+        "orderCount": 1,
+        "firstPurchase": "2025-11-15",
+        "lastPurchase": "2025-11-15",
+        "avgDaysBetween": null
+      }
+    ]
+  },
+  {
+    "customerId": "C-1008",
+    "city": "Gaziantep",
+    "region": "Güneydoğu Anadolu",
+    "age": 35,
+    "gender": "F",
+    "registeredAt": "2025-03-20",
+    "productHistory": [
+      {
+        "productId": "P-3001",
+        "category": "FRAGRANCE",
+        "totalQuantity": 1,
+        "totalSpent": 149.90,
+        "orderCount": 1,
+        "firstPurchase": "2025-11-10",
+        "lastPurchase": "2025-11-10",
+        "avgDaysBetween": null
+      },
+      {
+        "productId": "P-2004",
+        "category": "SKINCARE",
+        "totalQuantity": 1,
+        "totalSpent": 64.90,
+        "orderCount": 1,
+        "firstPurchase": "2025-10-05",
+        "lastPurchase": "2025-10-05",
+        "avgDaysBetween": null
+      },
+      {
+        "productId": "P-1002",
+        "category": "MAKEUP",
+        "totalQuantity": 1,
+        "totalSpent": 54.90,
+        "orderCount": 1,
+        "firstPurchase": "2025-09-15",
+        "lastPurchase": "2025-09-15",
+        "avgDaysBetween": null
+      }
+    ]
+  }
+]

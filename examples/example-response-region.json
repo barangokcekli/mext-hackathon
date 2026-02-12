@@ -1,0 +1,35 @@
+{
+  "analysis": {
+    "mode": "region",
+    "city": "Antalya",
+    "region": "Akdeniz",
+    "climateType": "Mediterranean",
+    "ageSegment": "Yetişkin",
+    "gender": null,
+    "churnSegment": "Aktif",
+    "valueSegment": "Standard",
+    "loyaltyTier": "Gümüş",
+    "affinityCategory": "SKINCARE",
+    "affinityType": "Keşifçi",
+    "diversityProfile": "Dengeli",
+    "estimatedBudget": 102.0,
+    "avgBasket": 85.0,
+    "avgMonthlySpend": 170.0,
+    "lastPurchaseDaysAgo": 30,
+    "orderCount": 0,
+    "totalSpent": 0.0,
+    "membershipDays": 0,
+    "missingRegulars": [],
+    "topProducts": [],
+    "message": "Region-based profile (no specific customer data)"
+  },
+  "explanation": {
+    "role": "assistant",
+    "content": [
+      {
+        "text": "## Regional Market Profile: Akdeniz - Antalya\n\n### **Market Characteristics:**\n\n🌍 **Region - Akdeniz**: Mediterranean coastal region known for warm climate and tourism.\n\n🌡️ **Climate Type - Mediterranean**: Hot, humid summers and mild winters influence product preferences.\n\n💰 **Market Basket - 85.0 TL**: Above-average spending capacity compared to national median.\n\n📈 **Trending Category - SKINCARE**: Regional preference driven by climate needs (sun protection, hydration).\n\n### **Typical Customer Profile:**\n\n👥 **Age Segment - Yetişkin**: Core demographic is adult customers (36-50 years).\n\n🥈 **Loyalty Tier - Gümüş**: Average loyalty level in the region.\n\n🔍 **Shopping Behavior - Keşifçi**: Customers explore various categories, not highly focused.\n\n⚖️ **Diversity - Dengeli**: Balanced product variety in shopping baskets.\n\n### **Regional Insights:**\n- High demand for SPF and sun protection products\n- Seasonal peaks during summer tourism\n- Strong skincare category performance\n- Opportunity for targeted regional campaigns"
+      }
+    ]
+  },
+  "timestamp": "2026-02-12T11:22:30.789012"
+}

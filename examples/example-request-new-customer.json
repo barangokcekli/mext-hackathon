@@ -1,0 +1,20 @@
+{
+  "customerData": {
+    "customerId": "C-NEW-001",
+    "city": "Antalya",
+    "customer": {
+      "customerId": "C-NEW-001",
+      "city": "Antalya",
+      "age": 22,
+      "gender": "F",
+      "registeredAt": "2026-02-01T00:00:00",
+      "productHistory": []
+    },
+    "region": {
+      "name": "Akdeniz",
+      "climateType": "Mediterranean",
+      "medianBasket": 85.0,
+      "trend": "SKINCARE"
+    }
+  }
+}
