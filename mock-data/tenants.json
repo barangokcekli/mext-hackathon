@@ -1,0 +1,18 @@
+{
+  "tenants": [
+    {
+      "tenantId": "farmasi",
+      "companyName": "Farmasi Türkiye",
+      "sector": "cosmetics",
+      "contactEmail": "info@farmasi.com.tr",
+      "apiKey": "frm_a8f3d9c2b1e4f7a6",
+      "createdAt": "2026-01-15T08:00:00Z",
+      "settings": {
+        "marginFloor": 25,
+        "stockDaysThreshold": 60,
+        "maxRecommendations": 3,
+        "currency": "TRY"
+      }
+    }
+  ]
+}
