@@ -2323,5 +2323,183 @@
       "tags": ["allik", "palette", "4lu"],
       "seasonalityRules": []
     }
-  ]
+  ],
+  "currentMonth": 2,
+  "orderHistory": [
+    {
+      "orderId": "ORD-2001", "orderDate": "2025-11-15", "customerId": "C001",
+      "items": [
+        {"productId": "3001001", "quantity": 30, "unitPrice": 129.90},
+        {"productId": "3001002", "quantity": 25, "unitPrice": 149.90},
+        {"productId": "3002003", "quantity": 35, "unitPrice": 59.90},
+        {"productId": "3002001", "quantity": 20, "unitPrice": 109.90},
+        {"productId": "3003001", "quantity": 22, "unitPrice": 79.90},
+        {"productId": "3004001", "quantity": 12, "unitPrice": 199.90},
+        {"productId": "3005001", "quantity": 15, "unitPrice": 109.90},
+        {"productId": "3005002", "quantity": 12, "unitPrice": 139.90}
+      ]
+    },
+    {
+      "orderId": "ORD-2002", "orderDate": "2025-11-28", "customerId": "C002",
+      "items": [
+        {"productId": "3001001", "quantity": 35, "unitPrice": 129.90},
+        {"productId": "3002003", "quantity": 40, "unitPrice": 59.90},
+        {"productId": "3002004", "quantity": 18, "unitPrice": 49.90},
+        {"productId": "3003002", "quantity": 20, "unitPrice": 119.90},
+        {"productId": "3004004", "quantity": 8, "unitPrice": 649.90},
+        {"productId": "3005003", "quantity": 10, "unitPrice": 124.90},
+        {"productId": "3006003", "quantity": 6, "unitPrice": 44.90},
+        {"productId": "3006006", "quantity": 8, "unitPrice": 39.90}
+      ]
+    },
+    {
+      "orderId": "ORD-2003", "orderDate": "2025-12-10", "customerId": "C003",
+      "items": [
+        {"productId": "3001003", "quantity": 22, "unitPrice": 159.90},
+        {"productId": "3001004", "quantity": 20, "unitPrice": 109.90},
+        {"productId": "3002001", "quantity": 25, "unitPrice": 109.90},
+        {"productId": "3002002", "quantity": 22, "unitPrice": 109.90},
+        {"productId": "3003001", "quantity": 28, "unitPrice": 79.90},
+        {"productId": "3004002", "quantity": 12, "unitPrice": 169.90},
+        {"productId": "3004005", "quantity": 6, "unitPrice": 799.90},
+        {"productId": "3005005", "quantity": 4, "unitPrice": 179.90},
+        {"productId": "3009002", "quantity": 10, "unitPrice": 219.90}
+      ]
+    },
+    {
+      "orderId": "ORD-2004", "orderDate": "2025-12-22", "customerId": "C004",
+      "items": [
+        {"productId": "3001001", "quantity": 40, "unitPrice": 129.90},
+        {"productId": "3001005", "quantity": 18, "unitPrice": 94.90},
+        {"productId": "3002003", "quantity": 45, "unitPrice": 59.90},
+        {"productId": "3003001", "quantity": 30, "unitPrice": 79.90},
+        {"productId": "3003002", "quantity": 25, "unitPrice": 119.90},
+        {"productId": "3004003", "quantity": 10, "unitPrice": 449.90},
+        {"productId": "3005001", "quantity": 18, "unitPrice": 109.90},
+        {"productId": "3005004", "quantity": 10, "unitPrice": 124.90},
+        {"productId": "3001011", "quantity": 15, "unitPrice": 79.90},
+        {"productId": "3001012", "quantity": 12, "unitPrice": 44.90}
+      ]
+    },
+    {
+      "orderId": "ORD-2005", "orderDate": "2026-01-05", "customerId": "C005",
+      "items": [
+        {"productId": "3001001", "quantity": 38, "unitPrice": 129.90},
+        {"productId": "3001002", "quantity": 30, "unitPrice": 149.90},
+        {"productId": "3002001", "quantity": 28, "unitPrice": 109.90},
+        {"productId": "3002003", "quantity": 42, "unitPrice": 59.90},
+        {"productId": "3003001", "quantity": 32, "unitPrice": 79.90},
+        {"productId": "3004001", "quantity": 15, "unitPrice": 199.90},
+        {"productId": "3004004", "quantity": 10, "unitPrice": 649.90},
+        {"productId": "3005002", "quantity": 15, "unitPrice": 139.90},
+        {"productId": "3005006", "quantity": 3, "unitPrice": 154.90},
+        {"productId": "3007003", "quantity": 8, "unitPrice": 69.90},
+        {"productId": "3008003", "quantity": 10, "unitPrice": 79.90}
+      ]
+    },
+    {
+      "orderId": "ORD-2006", "orderDate": "2026-01-15", "customerId": "C006",
+      "items": [
+        {"productId": "3001001", "quantity": 42, "unitPrice": 129.90},
+        {"productId": "3001003", "quantity": 28, "unitPrice": 159.90},
+        {"productId": "3002002", "quantity": 25, "unitPrice": 109.90},
+        {"productId": "3002003", "quantity": 50, "unitPrice": 59.90},
+        {"productId": "3002004", "quantity": 22, "unitPrice": 49.90},
+        {"productId": "3003001", "quantity": 35, "unitPrice": 79.90},
+        {"productId": "3003003", "quantity": 6, "unitPrice": 74.90},
+        {"productId": "3004002", "quantity": 14, "unitPrice": 169.90},
+        {"productId": "3005001", "quantity": 20, "unitPrice": 109.90},
+        {"productId": "3005003", "quantity": 12, "unitPrice": 124.90},
+        {"productId": "3010001", "quantity": 3, "unitPrice": 899.90},
+        {"productId": "3012001", "quantity": 8, "unitPrice": 319.90}
+      ]
+    },
+    {
+      "orderId": "ORD-2007", "orderDate": "2026-01-25", "customerId": "C007",
+      "items": [
+        {"productId": "3001002", "quantity": 32, "unitPrice": 149.90},
+        {"productId": "3001004", "quantity": 25, "unitPrice": 109.90},
+        {"productId": "3002001", "quantity": 30, "unitPrice": 109.90},
+        {"productId": "3002003", "quantity": 48, "unitPrice": 59.90},
+        {"productId": "3003002", "quantity": 28, "unitPrice": 119.90},
+        {"productId": "3004001", "quantity": 18, "unitPrice": 199.90},
+        {"productId": "3004005", "quantity": 8, "unitPrice": 799.90},
+        {"productId": "3005002", "quantity": 18, "unitPrice": 139.90},
+        {"productId": "3005005", "quantity": 5, "unitPrice": 179.90},
+        {"productId": "3007006", "quantity": 4, "unitPrice": 599.90},
+        {"productId": "3009002", "quantity": 12, "unitPrice": 219.90},
+        {"productId": "3012003", "quantity": 6, "unitPrice": 209.90}
+      ]
+    },
+    {
+      "orderId": "ORD-2008", "orderDate": "2026-02-01", "customerId": "C008",
+      "items": [
+        {"productId": "3001001", "quantity": 45, "unitPrice": 129.90},
+        {"productId": "3001002", "quantity": 28, "unitPrice": 149.90},
+        {"productId": "3001005", "quantity": 22, "unitPrice": 94.90},
+        {"productId": "3002003", "quantity": 55, "unitPrice": 59.90},
+        {"productId": "3002005", "quantity": 4, "unitPrice": 74.90},
+        {"productId": "3003001", "quantity": 38, "unitPrice": 79.90},
+        {"productId": "3004002", "quantity": 16, "unitPrice": 169.90},
+        {"productId": "3004004", "quantity": 12, "unitPrice": 649.90},
+        {"productId": "3005001", "quantity": 22, "unitPrice": 109.90},
+        {"productId": "3005004", "quantity": 14, "unitPrice": 124.90},
+        {"productId": "3006004", "quantity": 8, "unitPrice": 49.90},
+        {"productId": "3007001", "quantity": 5, "unitPrice": 134.90},
+        {"productId": "3008003", "quantity": 12, "unitPrice": 79.90},
+        {"productId": "3012004", "quantity": 5, "unitPrice": 189.90}
+      ]
+    },
+    {
+      "orderId": "ORD-2009", "orderDate": "2026-02-06", "customerId": "C009",
+      "items": [
+        {"productId": "3001001", "quantity": 40, "unitPrice": 129.90},
+        {"productId": "3001003", "quantity": 25, "unitPrice": 159.90},
+        {"productId": "3002001", "quantity": 32, "unitPrice": 109.90},
+        {"productId": "3002002", "quantity": 28, "unitPrice": 109.90},
+        {"productId": "3002003", "quantity": 52, "unitPrice": 59.90},
+        {"productId": "3003001", "quantity": 35, "unitPrice": 79.90},
+        {"productId": "3003002", "quantity": 30, "unitPrice": 119.90},
+        {"productId": "3004001", "quantity": 20, "unitPrice": 199.90},
+        {"productId": "3005002", "quantity": 20, "unitPrice": 139.90},
+        {"productId": "3005003", "quantity": 15, "unitPrice": 124.90},
+        {"productId": "3010002", "quantity": 2, "unitPrice": 549.90},
+        {"productId": "3010003", "quantity": 2, "unitPrice": 849.90},
+        {"productId": "3013002", "quantity": 3, "unitPrice": 329.90}
+      ]
+    },
+    {
+      "orderId": "ORD-2010", "orderDate": "2026-02-10", "customerId": "C010",
+      "items": [
+        {"productId": "3001001", "quantity": 48, "unitPrice": 129.90},
+        {"productId": "3001002", "quantity": 35, "unitPrice": 149.90},
+        {"productId": "3001004", "quantity": 28, "unitPrice": 109.90},
+        {"productId": "3002003", "quantity": 58, "unitPrice": 59.90},
+        {"productId": "3002004", "quantity": 25, "unitPrice": 49.90},
+        {"productId": "3003001", "quantity": 40, "unitPrice": 79.90},
+        {"productId": "3003002", "quantity": 32, "unitPrice": 119.90},
+        {"productId": "3004002", "quantity": 18, "unitPrice": 169.90},
+        {"productId": "3004004", "quantity": 14, "unitPrice": 649.90},
+        {"productId": "3005001", "quantity": 25, "unitPrice": 109.90},
+        {"productId": "3005002", "quantity": 22, "unitPrice": 139.90},
+        {"productId": "3005005", "quantity": 6, "unitPrice": 179.90},
+        {"productId": "3006006", "quantity": 10, "unitPrice": 39.90},
+        {"productId": "3007003", "quantity": 10, "unitPrice": 69.90},
+        {"productId": "3008003", "quantity": 14, "unitPrice": 79.90},
+        {"productId": "3009002", "quantity": 15, "unitPrice": 219.90},
+        {"productId": "3012001", "quantity": 10, "unitPrice": 319.90},
+        {"productId": "3012003", "quantity": 8, "unitPrice": 209.90},
+        {"productId": "3013003", "quantity": 4, "unitPrice": 189.90}
+      ]
+    }
+  ],
+  "climateData": {
+    "Istanbul": {"month": 2, "avgTempC": 6.5, "humidityPct": 72, "rainfallMm": 85, "seasonTag": "winter"},
+    "Ankara": {"month": 2, "avgTempC": 2.8, "humidityPct": 65, "rainfallMm": 45, "seasonTag": "winter"},
+    "Izmir": {"month": 2, "avgTempC": 9.2, "humidityPct": 68, "rainfallMm": 95, "seasonTag": "winter"},
+    "Antalya": {"month": 2, "avgTempC": 11.5, "humidityPct": 66, "rainfallMm": 120, "seasonTag": "winter"},
+    "Trabzon": {"month": 2, "avgTempC": 7.0, "humidityPct": 78, "rainfallMm": 65, "seasonTag": "winter"},
+    "Bursa": {"month": 2, "avgTempC": 5.8, "humidityPct": 74, "rainfallMm": 80, "seasonTag": "winter"},
+    "Gaziantep": {"month": 2, "avgTempC": 5.2, "humidityPct": 62, "rainfallMm": 55, "seasonTag": "winter"}
+  }
 }
