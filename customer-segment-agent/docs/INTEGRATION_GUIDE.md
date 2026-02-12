@@ -5,7 +5,9 @@ This guide explains how to integrate and call the Customer Segment Agent from ot
 ## 🔗 Agent Information
 
 - **Agent Name:** `customer_segment_agent`
-- **Agent ARN:** `arn:aws:bedrock-agentcore:us-west-2:485169707250:runtime/customer_segment_agent-1GD3a24jRt`
+- **Agent ARN:** `arn:aws:bedrock-agentcore:us-west-2:472634336236:runtime/customer_segment_agent-AF1ggg7Wx7`
+- **Agent ID:** `customer_segment_agent-AF1ggg7Wx7`
+- **AWS Account:** `472634336236`
 - **Region:** `us-west-2`
 - **Endpoint Type:** AWS Bedrock AgentCore Runtime
 
@@ -57,7 +59,7 @@ customer_data = {
 
 # Invoke the agent
 response = client.invoke_agent(
-    agentId='customer_segment_agent-1GD3a24jRt',
+    agentId='customer_segment_agent-AF1ggg7Wx7',
     agentAliasId='TSTALIASID',  # Use your alias ID
     sessionId='unique-session-id',
     inputText=json.dumps(customer_data)
@@ -79,7 +81,7 @@ const client = new BedrockAgentRuntimeClient({ region: "us-west-2" });
 
 async function analyzeCustomer(customerData) {
     const command = new InvokeAgentCommand({
-        agentId: "customer_segment_agent-1GD3a24jRt",
+        agentId: "customer_segment_agent-AF1ggg7Wx7",
         agentAliasId: "TSTALIASID",
         sessionId: "unique-session-id",
         inputText: JSON.stringify({ customerData })
@@ -401,7 +403,7 @@ batch_results = analyze_customer_batch(customer_ids)
         "bedrock:InvokeAgent",
         "bedrock-agent-runtime:InvokeAgent"
       ],
-      "Resource": "arn:aws:bedrock-agentcore:us-west-2:485169707250:runtime/customer_segment_agent-1GD3a24jRt"
+      "Resource": "arn:aws:bedrock-agentcore:us-west-2:472634336236:runtime/customer_segment_agent-AF1ggg7Wx7"
     }
   ]
 }
@@ -413,7 +415,7 @@ batch_results = analyze_customer_batch(customer_ids)
 export AWS_REGION=us-west-2
 export AWS_ACCESS_KEY_ID=your_access_key
 export AWS_SECRET_ACCESS_KEY=your_secret_key
-export CUSTOMER_SEGMENT_AGENT_ARN=arn:aws:bedrock-agentcore:us-west-2:485169707250:runtime/customer_segment_agent-1GD3a24jRt
+export CUSTOMER_SEGMENT_AGENT_ARN=arn:aws:bedrock-agentcore:us-west-2:472634336236:runtime/customer_segment_agent-AF1ggg7Wx7
 ```
 
 ## 🐛 Error Handling
@@ -458,7 +460,7 @@ def call_customer_segment_agent_safe(customer_data):
 
 ```bash
 # Tail agent logs
-aws logs tail /aws/bedrock-agentcore/runtimes/customer_segment_agent-1GD3a24jRt-DEFAULT \
+aws logs tail /aws/bedrock-agentcore/runtimes/customer_segment_agent-AF1ggg7Wx7-DEFAULT \
   --follow \
   --format short
 

@@ -9,8 +9,8 @@ from datetime import datetime
 client = boto3.client('bedrock-agent-runtime', region_name='us-west-2')
 
 # Agent configuration
-AGENT_ID = 'customer_segment_agent-1GD3a24jRt'
-AGENT_ARN = 'arn:aws:bedrock-agentcore:us-west-2:485169707250:runtime/customer_segment_agent-1GD3a24jRt'
+AGENT_ID = 'customer_segment_agent-AF1ggg7Wx7'
+AGENT_ARN = 'arn:aws:bedrock-agentcore:us-west-2:472634336236:runtime/customer_segment_agent-AF1ggg7Wx7'
 
 
 def call_customer_segment_agent(customer_data):

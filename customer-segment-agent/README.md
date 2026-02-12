@@ -23,6 +23,11 @@ This agent analyzes customer data and provides comprehensive segmentation insigh
   - 29,000+ customers/second throughput
   - Production-ready with logging and validation
 
+- **Deployment:**
+  - AWS Account: `472634336236`
+  - Agent ARN: `arn:aws:bedrock-agentcore:us-west-2:472634336236:runtime/customer_segment_agent-AF1ggg7Wx7`
+  - Region: `us-west-2`
+
 - **Production Ready:**
   - Input validation with detailed error messages
   - Comprehensive logging (CloudWatch integration)
@@ -96,7 +101,7 @@ import json
 client = boto3.client('bedrock-agent-runtime', region_name='us-west-2')
 
 response = client.invoke_agent(
-    agentId='customer_segment_agent-1GD3a24jRt',
+    agentId='customer_segment_agent-AF1ggg7Wx7',
     agentAliasId='TSTALIASID',
     sessionId='unique-session-id',
     inputText=json.dumps({"customerData": {...}})
@@ -314,7 +319,7 @@ python tests/test_deployed_agent_20.py
 
 **CloudWatch Logs:**
 ```bash
-aws logs tail /aws/bedrock-agentcore/runtimes/customer_segment_agent-1GD3a24jRt-DEFAULT --follow
+aws logs tail /aws/bedrock-agentcore/runtimes/customer_segment_agent-AF1ggg7Wx7-DEFAULT --follow
 ```
 
 **GenAI Observability Dashboard:**
@@ -325,6 +330,7 @@ https://console.aws.amazon.com/cloudwatch/home?region=us-west-2#gen-ai-observabi
 - **Framework:** Strands Agents
 - **Runtime:** AWS Bedrock AgentCore
 - **Deployment:** Direct Code Deploy (no Docker)
+- **AWS Account:** 472634336236
 - **Region:** us-west-2
 - **Observability:** CloudWatch + X-Ray
 - **Memory:** STM_ONLY mode

@@ -4,8 +4,8 @@
 const { BedrockAgentRuntimeClient, InvokeAgentCommand } = require("@aws-sdk/client-bedrock-agent-runtime");
 
 // Agent configuration
-const AGENT_ID = "customer_segment_agent-1GD3a24jRt";
-const AGENT_ARN = "arn:aws:bedrock-agentcore:us-west-2:485169707250:runtime/customer_segment_agent-1GD3a24jRt";
+const AGENT_ID = "customer_segment_agent-AF1ggg7Wx7";
+const AGENT_ARN = "arn:aws:bedrock-agentcore:us-west-2:472634336236:runtime/customer_segment_agent-AF1ggg7Wx7";
 const REGION = "us-west-2";
 
 // Initialize client
