@@ -291,7 +291,7 @@ Sonucu şu yapıda döndür:
 def create_orchestrator_agent() -> Agent:
     """Orchestrator Agent'ı oluşturur."""
     model = BedrockModel(
-        model_id="anthropic.claude-sonnet-4-20250514",
+        model_id="global.anthropic.claude-opus-4-5-20251101-v1:0",
         region_name=AWS_REGION,
     )
 

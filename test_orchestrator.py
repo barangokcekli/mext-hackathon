@@ -119,7 +119,7 @@ def main():
     # Parse args
     customer_id = "C-2001"
     run_all = "--all" in sys.argv
-    use_llm = "--llm" in sys.argv
+    use_llm = "--no-llm" not in sys.argv
     limit = None
 
     for i, arg in enumerate(sys.argv):
