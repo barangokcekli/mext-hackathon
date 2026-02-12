@@ -63,6 +63,18 @@ CAMPAIGN_AGENT_ARN = os.environ.get(
 AWS_REGION = os.environ.get("AWS_REGION", "us-west-2")
 
 # ---------------------------------------------------------------------------
+# AWS Credentials — .env dosyasından yüklenir
+# ---------------------------------------------------------------------------
+from pathlib import Path
+_env_file = Path(__file__).parent / ".env"
+if _env_file.exists():
+    for line in _env_file.read_text().splitlines():
+        line = line.strip()
+        if line and not line.startswith("#") and "=" in line:
+            key, _, value = line.partition("=")
+            os.environ.setdefault(key.strip(), value.strip())
+
+# ---------------------------------------------------------------------------
 # AgentCore Runtime client
 # ---------------------------------------------------------------------------
 agentcore_client = boto3.client("bedrock-agentcore", region_name=AWS_REGION)
@@ -291,7 +303,7 @@ Sonucu şu yapıda döndür:
 def create_orchestrator_agent() -> Agent:
     """Orchestrator Agent'ı oluşturur."""
     model = BedrockModel(
-        model_id="global.anthropic.claude-opus-4-5-20251101-v1:0",
+        model_id="us.anthropic.claude-sonnet-4-5-20250929-v1:0",
         region_name=AWS_REGION,
     )
 
