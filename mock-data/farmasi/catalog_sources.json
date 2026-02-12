@@ -1,0 +1,15 @@
+{
+  "sources": [
+    {
+      "url": "https://farmasi.com.tr/farmasi",
+      "lastScraped": "2026-02-12T15:00:00Z",
+      "productCount": 19,
+      "selectors": {
+        "productCard": ".product-card",
+        "name": ".product-name",
+        "price": ".product-price",
+        "category": ".breadcrumb"
+      }
+    }
+  ]
+}

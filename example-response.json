@@ -1,0 +1,68 @@
+{
+  "analysis": {
+    "mode": "regular",
+    "customerId": "C-1001",
+    "city": "Istanbul",
+    "region": "Marmara",
+    "climateType": "Temperate",
+    "age": 32,
+    "ageSegment": "GençYetişkin",
+    "gender": "F",
+    "churnSegment": "Aktif",
+    "valueSegment": "Standard",
+    "loyaltyTier": "Gümüş",
+    "affinityCategory": "SKINCARE",
+    "affinityType": "Odaklı",
+    "diversityProfile": "Sadık",
+    "estimatedBudget": 95.15,
+    "avgBasket": 79.29,
+    "avgMonthlySpend": 57.85,
+    "lastPurchaseDaysAgo": 11,
+    "orderCount": 17,
+    "totalSpent": 1348.00,
+    "membershipDays": 699,
+    "missingRegulars": [],
+    "topProducts": [
+      {
+        "productId": "P-2001",
+        "totalQuantity": 8,
+        "totalSpent": 479.20,
+        "lastBought": "2026-01-20T00:00:00"
+      },
+      {
+        "productId": "P-2004",
+        "totalQuantity": 7,
+        "totalSpent": 454.30,
+        "lastBought": "2026-02-01T00:00:00"
+      },
+      {
+        "productId": "P-3001",
+        "totalQuantity": 1,
+        "totalSpent": 149.90,
+        "lastBought": "2025-07-10T00:00:00"
+      },
+      {
+        "productId": "P-2002",
+        "totalQuantity": 1,
+        "totalSpent": 119.90,
+        "lastBought": "2025-11-25T00:00:00"
+      },
+      {
+        "productId": "P-1003",
+        "totalQuantity": 2,
+        "totalSpent": 89.80,
+        "lastBought": "2025-04-25T00:00:00"
+      }
+    ],
+    "message": "Full customer analysis completed"
+  },
+  "explanation": {
+    "role": "assistant",
+    "content": [
+      {
+        "text": "## Customer Profile Summary: C-1001\n\nHere's a brief explanation of this customer's segmentation analysis:\n\n### **Customer Characteristics:**\n\n🎯 **Age Segment - GençYetişkin**: This customer falls into the young adult demographic, likely aged 25-34. This segment typically shows strong engagement with beauty and personal care products.\n\n📈 **Churn Segment - Aktif**: The customer is currently active and engaged, showing recent purchase behavior with low churn risk. They're maintaining regular interaction with the brand.\n\n💰 **Value Segment - Standard**: This customer represents typical spending patterns - not in the high-value tier but maintains consistent purchase behavior that contributes meaningfully to revenue.\n\n🥈 **Loyalty Tier - Gümüş (Silver)**: Mid-tier loyalty level indicating moderate brand engagement. They've shown some commitment to the brand but have room to grow into higher loyalty tiers (Altın/Platin).\n\n### **Purchase Behavior:**\n\n🧴 **Affinity Category - SKINCARE**: Strong preference and focus on skincare products, indicating this is their primary category of interest and expertise.\n\n🎯 **Diversity Profile - Sadık (Loyal)**: Despite being in a lower loyalty tier, they show \"loyal\" diversity behavior - meaning they consistently stick to preferred categories rather than exploring broadly across product ranges.\n\n### **Strategic Insights:**\nThis customer represents a stable, category-focused young adult with growth potential for both value and loyalty advancement through targeted skincare offerings."
+      }
+    ]
+  },
+  "timestamp": "2026-02-12T11:17:58.004912"
+}

@@ -1,0 +1,11 @@
+{
+  "customerData": {
+    "city": "Antalya",
+    "region": {
+      "name": "Akdeniz",
+      "climateType": "Mediterranean",
+      "medianBasket": 85.0,
+      "trend": "SKINCARE"
+    }
+  }
+}

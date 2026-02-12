@@ -1,0 +1,96 @@
+{
+  "regions": [
+    {
+      "name": "Marmara",
+      "climateType": "Metropol",
+      "medianBasket": 85.00,
+      "trend": "SKINCARE",
+      "seasonalNeeds": {
+        "winter": ["nemlendirici", "dudak-bakım", "el-kremi"],
+        "summer": ["SPF", "hafif-nemlendirici", "mat-makyaj"],
+        "spring": ["anti-aging", "serum", "temizleyici"],
+        "autumn": ["onarıcı", "besleyici-krem", "maske"]
+      },
+      "cities": ["Istanbul", "Bursa", "Kocaeli"]
+    },
+    {
+      "name": "Ege",
+      "climateType": "Sıcak-Nemli",
+      "medianBasket": 65.00,
+      "trend": "SKINCARE",
+      "seasonalNeeds": {
+        "winter": ["nemlendirici", "koruyucu-krem"],
+        "summer": ["SPF", "hafif-nemlendirici", "mat-makyaj", "bronzlaştırıcı"],
+        "spring": ["temizleyici", "tonik", "hafif-serum"],
+        "autumn": ["nemlendirici", "onarıcı-serum"]
+      },
+      "cities": ["Izmir", "Mugla", "Aydin"]
+    },
+    {
+      "name": "Akdeniz",
+      "climateType": "Sıcak-Nemli",
+      "medianBasket": 60.00,
+      "trend": "MAKEUP",
+      "seasonalNeeds": {
+        "winter": ["nemlendirici", "dudak-bakım"],
+        "summer": ["SPF", "bronzlaştırıcı", "su-bazlı-fondöten"],
+        "spring": ["hafif-nemlendirici", "temizleyici"],
+        "autumn": ["onarıcı", "nemlendirici"]
+      },
+      "cities": ["Antalya", "Mersin", "Adana"]
+    },
+    {
+      "name": "İç Anadolu",
+      "climateType": "Sıcak-Kuru",
+      "medianBasket": 55.00,
+      "trend": "SKINCARE",
+      "seasonalNeeds": {
+        "winter": ["yoğun-nemlendirici", "dudak-bakım", "el-kremi", "koruyucu-bariyer"],
+        "summer": ["SPF", "hafif-nemlendirici"],
+        "spring": ["nemlendirici", "temizleyici"],
+        "autumn": ["yoğun-nemlendirici", "onarıcı-serum"]
+      },
+      "cities": ["Ankara", "Konya", "Kayseri"]
+    },
+    {
+      "name": "Karadeniz",
+      "climateType": "Soğuk",
+      "medianBasket": 50.00,
+      "trend": "SKINCARE",
+      "seasonalNeeds": {
+        "winter": ["besleyici-krem", "dudak-bakım", "koruyucu-serum", "el-kremi"],
+        "summer": ["hafif-nemlendirici", "SPF"],
+        "spring": ["nemlendirici", "temizleyici"],
+        "autumn": ["besleyici-krem", "onarıcı-serum", "maske"]
+      },
+      "cities": ["Trabzon", "Samsun", "Rize"]
+    },
+    {
+      "name": "Doğu Anadolu",
+      "climateType": "Soğuk",
+      "medianBasket": 45.00,
+      "trend": "SKINCARE",
+      "seasonalNeeds": {
+        "winter": ["yoğun-besleyici-krem", "dudak-bakım", "el-kremi", "koruyucu-bariyer"],
+        "summer": ["nemlendirici", "SPF"],
+        "spring": ["nemlendirici", "onarıcı"],
+        "autumn": ["besleyici-krem", "koruyucu-serum"]
+      },
+      "cities": ["Erzurum", "Van", "Kars"]
+    },
+    {
+      "name": "Güneydoğu Anadolu",
+      "climateType": "Sıcak-Kuru",
+      "medianBasket": 50.00,
+      "trend": "FRAGRANCE",
+      "seasonalNeeds": {
+        "winter": ["yoğun-nemlendirici", "dudak-bakım"],
+        "summer": ["SPF", "mat-makyaj", "hafif-parfüm"],
+        "spring": ["nemlendirici", "temizleyici"],
+        "autumn": ["nemlendirici", "koruyucu-krem"]
+      },
+      "cities": ["Gaziantep", "Diyarbakir", "Sanliurfa"]
+    }
+  ],
+  "stockDaysThreshold": 60
+}

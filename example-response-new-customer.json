@@ -1,0 +1,37 @@
+{
+  "analysis": {
+    "mode": "new_customer",
+    "customerId": "C-NEW-001",
+    "city": "Antalya",
+    "region": "Akdeniz",
+    "climateType": "Mediterranean",
+    "age": 22,
+    "ageSegment": "GenZ",
+    "gender": "F",
+    "churnSegment": "Riskli",
+    "valueSegment": "Standard",
+    "loyaltyTier": "Bronz",
+    "affinityCategory": "SKINCARE",
+    "affinityType": "Keşifçi",
+    "diversityProfile": "Kaşif",
+    "estimatedBudget": 102.0,
+    "avgBasket": 85.0,
+    "avgMonthlySpend": 0.0,
+    "lastPurchaseDaysAgo": 999,
+    "orderCount": 0,
+    "totalSpent": 0.0,
+    "membershipDays": 11,
+    "missingRegulars": [],
+    "topProducts": [],
+    "message": "New customer profile (no purchase history yet)"
+  },
+  "explanation": {
+    "role": "assistant",
+    "content": [
+      {
+        "text": "## New Customer Profile: C-NEW-001\n\n### **Welcome Profile:**\n\n🆕 **New Customer Status**: This is a newly registered customer with no purchase history yet. They represent a fresh opportunity for brand engagement.\n\n👶 **Age Segment - GenZ**: At 22 years old, this customer belongs to the GenZ demographic, known for digital-first behavior and social media influence.\n\n⚠️ **Churn Segment - Riskli**: As a new customer without purchases, they're automatically in the high-risk category. First purchase is critical for retention.\n\n🥉 **Loyalty Tier - Bronz**: Starting tier for all new customers. Quick wins in the first 30 days can accelerate tier progression.\n\n### **Opportunity Profile:**\n\n🔍 **Affinity Type - Keşifçi (Explorer)**: New customers typically explore various categories before settling on preferences.\n\n🗺️ **Diversity Profile - Kaşif (Explorer)**: Expected to try diverse products as they discover the brand.\n\n### **Recommended Actions:**\n- Send welcome campaign with SKINCARE focus (regional trend)\n- Offer first-purchase incentive\n- Introduce category variety to encourage exploration\n- Set 30-day engagement milestone"
+      }
+    ]
+  },
+  "timestamp": "2026-02-12T11:20:15.123456"
+}
